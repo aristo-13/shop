@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 function Header() {
   return (
-    <div className='border p-2 text-[18px] '>
+    <div className='p-2 text-[18px] '>
       <div className=' w-full flex justify-between items-center'>
          <div className='flex items-center gap-[20px]'>
             <div className='flex items-center'>
