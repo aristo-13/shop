@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom';
 
 function Header() {
   return (
-    <div className='border p-3 text-[18px]'>
-      <div className='flex justify-between items-center'>
-         <div className='flex items-center gap-[25px]'>
+    <div className='border p-2 text-[18px] '>
+      <div className=' w-full flex justify-between items-center'>
+         <div className='flex items-center gap-[20px]'>
             <div className='flex items-center'>
                 <img src={EN} alt="logo" width='20' height='10'/>
                 <ExpandMoreIcon />
@@ -26,9 +26,9 @@ function Header() {
             <Link to='products/4'>Accessories</Link>
          </div>
          <div>
-            <Link className='text-[30px] font-medium' to='/'>RICHSTORE</Link>
+            <Link className='text-[25px] text-[#2879fe] font-medium' to='/'>RICHSTORE</Link>
          </div>
-         <div className='flex gap-[25px] items-center cursor-pointer'>
+         <div className='flex gap-[20px] items-center cursor-pointer'>
             <Link to='/'>Homepage</Link>
             <Link to='/'>About</Link>
             <Link to='/'>Contact</Link>
