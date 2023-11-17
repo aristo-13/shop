@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 function Card({ product }) {
   return (
-    <div>
-      <Link to={`products/${product.id}`}>
+    <div className="mb-10">
+      <Link to={`/product/${product.id}`}>
         <div className="w-[250px] flex flex-col gap-2">
           <div className="w-full h-[350px] overflow-hidden relative group">
              {product.isNew && <span className="absolute top-1 left-1 bg-white text-[teal] p-1 z-20 font-medium text-[0.7rem]">New Season</span>}

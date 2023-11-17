@@ -25,7 +25,7 @@ function Categories() {
             <div className="flex-1 flex gap-[5px] overflow-hidden">
                 <div className="flex-1 relative overflow-hidden">
                     <Button name='Sale'/> 
-                   <img src="https://images.pexels.com/photos/818992/pexels-photo-818992.jpeg?auto=compress&cs=tinysrgb&w=1600" className="w-full h-full object-cover" alt="" />
+                    <img src="https://images.pexels.com/photos/818992/pexels-photo-818992.jpeg?auto=compress&cs=tinysrgb&w=1600" className="w-full h-full object-cover" alt="" />
                 </div>
                 <div className="flex-1 relative overflow-hidden">
                     <Button name='Sale'/> 
