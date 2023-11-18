@@ -28,8 +28,8 @@ const PrevSlide = () =>{
     <div className='h-[calc(100vh-80px)] w-full relative overflow-hidden'>
        <div className='w-[300vw] flex h-full duration-300' style={{transform: `translateX(-${currIndex * 100}vw)`}}>
          {
-            images.map((image) => (
-                <img src={image} alt=""  className='w-[100vw] h-full object-cover'/>
+            images.map((image,index) => (
+                <img src={image} alt=""  className='w-[100vw] h-full object-cover' key={index}/>
             ))
          }
        </div>
@@ -40,7 +40,7 @@ const PrevSlide = () =>{
         <div className='absolute bottom-5 w-full flex justify-center items-center text-white cursor-pointer'>
             {
                 images.map((image,index) => (
-                    <FiberManualRecordIcon onClick={() =>setCurrIndex(index)} fontSize='small' style={{opacity: currIndex === index ? "1" : "0.5"}}/>
+                    <FiberManualRecordIcon key={index} onClick={() =>setCurrIndex(index)} fontSize='small' style={{opacity: currIndex === index ? "1" : "0.5"}}/>
                 ))
             }
         </div>

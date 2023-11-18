@@ -1,5 +1,4 @@
-import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
-
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined'; 
 
 function Cart() {
  const data = [

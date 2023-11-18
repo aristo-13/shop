@@ -9,7 +9,7 @@ import { useState } from 'react';
 import Cart from './Cart';
 
 function Header() {
-const [openCart,setOpen] = useState(true)
+const [openCart,setOpen] = useState(false)
 
   return (
     <div className='p-2 text-[18px] relative'>
