@@ -5,10 +5,14 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import EN from '/images/EN.png'
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import Cart from './Cart';
 
 function Header() {
+const [openCart,setOpen] = useState(true)
+
   return (
-    <div className='p-2 text-[18px] '>
+    <div className='p-2 text-[18px] relative'>
       <div className=' w-full flex justify-between items-center'>
          <div className='flex items-center gap-[20px]'>
             <div className='flex items-center'>
@@ -37,13 +41,14 @@ function Header() {
                <SearchIcon fontSize='small'/>
                <PersonOutlineIcon fontSize='small'/>
                <FavoriteBorderOutlinedIcon fontSize='small'/>
-               <div className='relative cursor-pointer text-[12px]'>
+               <div className='relative cursor-pointer text-[12px]' onClick={() => setOpen(!openCart)}>
                  <ShoppingCartOutlinedIcon fontSize='small'/>
                  <span className='absolute -right-1 -top-2 w-4 h-4 bg-blue-500 flex justify-center items-center rounded-full text-white'>0</span>
                </div>
             </div>
          </div>
       </div>
+      { openCart && <Cart />}
     </div>
   )
 }
