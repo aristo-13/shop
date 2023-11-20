@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Card from "./Card";
 import api from "../../api/api";
 import useFetch from "../Hooks/useFetch";
-
+import Skeleton from "./Skeleton";
 
 function FeaturedProducts({type}) {
   
@@ -34,8 +34,8 @@ function FeaturedProducts({type}) {
             .</p>
        </div>
        <div className="flex justify-center gap-5">
-           {
-            data.map((product) => (
+           { Loading ? <Skeleton styles='w-[250px] h-[350px]' num={4}/>
+            : data.map((product) => (
                 <Card key={product.id} product={product}/>
             ))
            }
