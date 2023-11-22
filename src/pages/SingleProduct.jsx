@@ -5,13 +5,28 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import {useParams} from 'react-router-dom'
 import useFetch from "../Hooks/useFetch";
 import Skeleton from "../Components/Skeleton";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/CartReducer";
 
 function SingleProduct() {
 const  {id} = useParams()
 const [selectedImg,setSelectedImg] = useState("img")
-const [quantity,setQuantity] = useState(0)
+const [quantity,setQuantity] = useState(1)
 const {data,Loading,error} = useFetch(`api/products/${id}?populate=*`)
- 
+const dispatch = useDispatch()
+
+const addProductToCart = () => {
+   dispatch(addToCart(
+    {
+      id: data.id,
+      title: data.attributes.title,
+      desc: data.attributes.desc,
+      price: data.attributes.price,
+      img: data.attributes.img.data.attributes.url,
+      quantity,
+    }
+   ))
+}
 
   return (
     <div className="flex px-5 gap-5">
@@ -52,7 +67,7 @@ const {data,Loading,error} = useFetch(`api/products/${id}?populate=*`)
                <span>{quantity}</span>
               <button className="p-2 w-[40px] h-[40px] border flex justify-center items-center bg-black/10" onClick={()=>setQuantity(prev => prev+1)}>+</button>
          </div>
-       <button className="uppercase border p-2 w-[200px] bg-[#2879fe] text-white flex items-center gap-4 justify-center font-medium">
+       <button onClick={addProductToCart} className="uppercase border p-2 w-[200px] bg-[#2879fe] text-white flex items-center gap-4 justify-center font-medium">
          <AddShoppingCartIcon /> Add to cart
        </button>
        <div className="flex gap-5">

@@ -7,9 +7,11 @@ import EN from '/images/EN.png'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import Cart from './Cart';
+import { useSelector } from 'react-redux';
 
 function Header() {
 const [openCart,setOpen] = useState(false)
+const data = useSelector(state=> state.cart.products)
 
   return (
     <div className='p-2 text-[18px] relative'>
@@ -43,7 +45,7 @@ const [openCart,setOpen] = useState(false)
                <FavoriteBorderOutlinedIcon fontSize='small'/>
                <div className='relative cursor-pointer text-[12px]' onClick={() => setOpen(!openCart)}>
                  <ShoppingCartOutlinedIcon fontSize='small'/>
-                 <span className='absolute -right-1 -top-2 w-4 h-4 bg-blue-500 flex justify-center items-center rounded-full text-white'>0</span>
+                 <span className='absolute -right-1 -top-2 w-4 h-4 bg-blue-500 flex justify-center items-center rounded-full text-white'>{data.length}</span>
                </div>
             </div>
          </div>
